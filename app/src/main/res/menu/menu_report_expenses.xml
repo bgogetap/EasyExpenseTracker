@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_action_report_list"
+        android:icon="@drawable/ic_report"
+        android:title="@string/reports"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/menu_action_report_info"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/report_settings"
+        app:showAsAction="ifRoom"/>
+</menu>

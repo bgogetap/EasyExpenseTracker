@@ -1,0 +1,24 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+
+    <!-- Modal Margins -->
+    <dimen name="modal_side_margin">32dp</dimen>
+    <dimen name="modal_top_bottom_margin">16dp</dimen>
+
+    <dimen name="recycler_view_item_spacing">6dp</dimen>
+    <dimen name="dialog_width">300dp</dimen>
+    <dimen name="thumbnail_size">48dp</dimen>
+
+    <!-- Card Values -->
+    <dimen name="default_elevation">2dp</dimen>
+    <dimen name="unselected_elevation">1dp</dimen>
+    <dimen name="selected_elevation">12dp</dimen>
+
+    <dimen name="min_modal_height">200dp</dimen>
+</resources>

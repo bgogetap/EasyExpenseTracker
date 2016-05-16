@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#88000000">
+
+    <FrameLayout
+        android:layout_gravity="center"
+        android:id="@+id/fl_modal_content_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/modal_top_bottom_margin"
+        android:layout_marginBottom="@dimen/modal_top_bottom_margin"
+        android:layout_marginLeft="@dimen/modal_side_margin"
+        android:layout_marginRight="@dimen/modal_side_margin"
+        />
+</FrameLayout>
