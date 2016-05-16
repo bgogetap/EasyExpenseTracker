@@ -24,8 +24,8 @@ android {
         applicationId "com.cultureoftech.easyexpensetracker"
         minSdkVersion 17
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode versionCodeNumber
+        versionName "1.0.1"
     }
 
     signingConfigs {
@@ -138,4 +138,16 @@ dependencies {
 repositories {
     mavenCentral()
     maven { url 'https://maven.fabric.io/public' }
+}
+
+def getVersionCodeNumber() {
+    Properties localProperties = new Properties()
+    localProperties.load(project.rootProject.file('local.properties').newDataInputStream())
+    def localVersionCode = localProperties.getProperty('local.version.code')
+
+    if (localVersionCode != null && build.name.equals("debug")) {
+        return Integer.valueOf(localVersionCode)
+    } else {
+        return (int) (new Date().getTime() / 1000) - 1000000000
+    }
 }

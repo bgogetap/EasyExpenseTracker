@@ -9,10 +9,26 @@ import android.net.Uri
 import android.os.Environment
 import android.support.annotation.StringRes
 import android.support.v7.app.AlertDialog
+import timber.log.Timber
 import java.io.File
 
 fun Intent.hasActivity(context: Context): Boolean {
     return context.packageManager.queryIntentActivities(this, PackageManager.MATCH_ALL).size > 0
+}
+
+fun String.toSafeDouble(): Double {
+    val value: Double
+    if (this.isNotEmpty()) {
+        try {
+            value = this.toDouble()
+        } catch (e: NumberFormatException) {
+            Timber.e("Invalid characters, returning default Double Value", e)
+            value = 0.0
+        }
+    } else {
+        value = 0.0
+    }
+    return value
 }
 
 fun getNewImageFileUri(context: Context): Uri {

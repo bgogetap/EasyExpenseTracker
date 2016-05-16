@@ -29,6 +29,8 @@ import com.cultureoftech.easyexpensetracker.model.ImageHelper
 import com.cultureoftech.easyexpensetracker.photo.AddPhotoDialog
 import com.cultureoftech.easyexpensetracker.utils.alert
 import com.cultureoftech.easyexpensetracker.utils.pushNormal
+import com.cultureoftech.easyexpensetracker.utils.toSafeDouble
+import timber.log.Timber
 import java.io.File
 import javax.inject.Inject
 
@@ -96,10 +98,17 @@ class DetailController(val bundle: Bundle) : ScopedController(), AddPhotoDialog.
             run {
                 val text = amountEditText.text.toString()
                 if (gain) {
-                    if (text.isNotEmpty() && text.toDouble() == 0.0) {
+                    val value = text.toSafeDouble()
+                    if (value == 0.0) {
                         amountEditText.setText("")
                     }
                 } else {
+                    try {
+                        text.toDouble()
+                    } catch (e: NumberFormatException) {
+                        Timber.e("Focus lost with non-number data, reverting to 0.0", e)
+                        amountEditText.setText("0.0")
+                    }
                     if (text.isEmpty()) {
                         amountEditText.setText("0.0")
                     }
